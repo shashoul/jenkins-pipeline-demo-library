@@ -3,8 +3,9 @@ def call() {
       sh '''
         git version
         docker version
-        dotnet --list-sdks
-        dotnet --list-runtimes
+        echo "Audit Tools groovy"
+        #dotnet --list-sdks
+        #dotnet --list-runtimes
       '''
     }
 }
