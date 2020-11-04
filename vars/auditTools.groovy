@@ -13,6 +13,7 @@ def call() {
                 #dotnet --list-sdks
                 #dotnet --list-runtimes
                 echo "Running from shared library..."
+                ehco "${RC}"
               '''
       env.JENKINS_SKIP_RELEASE = 'TRUE'
       withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'NEXUS_PASSWORD', usernameVariable: 'USERNAME', 
