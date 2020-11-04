@@ -8,10 +8,7 @@ def call() {
         #dotnet --list-runtimes
         echo "Running from shared library..."
       '''
-      when {	
-                branch 'master' 
-                //expression { params.deployment_environment == 'int' }
-            } // end when	
+      env.JENKINS_SKIP_RELEASE = 'TRUE'
       withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'NEXUS_PASSWORD', usernameVariable: 'USERNAME', 
                       passwordVariable: 'NEXUS_PASSWORD']]){
                           sh(libraryResource('test.sh'))
