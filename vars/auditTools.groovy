@@ -2,7 +2,7 @@ import org.jenkinsci.plugins.pipeline.modeldefinition.Utils
 
 def call() {
     node {
-      if (!env.RC)
+      if (!RC)
       {
           Utils.markStageSkippedForConditional("Audit tools")
       }
