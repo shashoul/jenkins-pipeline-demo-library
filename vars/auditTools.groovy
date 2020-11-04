@@ -8,5 +8,6 @@ def call() {
         #dotnet --list-runtimes
         echo "Running from shared library..."
       '''
+      sh(libraryResource('test.sh'))
     }
 }
