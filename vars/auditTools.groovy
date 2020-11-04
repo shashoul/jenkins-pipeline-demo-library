@@ -1,5 +1,9 @@
+import org.jenkinsci.plugins.pipeline.modeldefinition.Utils
+
 def call() {
     node {
+      Utils.markStageSkippedForConditional("Audit tools")
+
       sh '''
         git version
         docker version
