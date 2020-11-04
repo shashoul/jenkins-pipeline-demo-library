@@ -1,9 +1,10 @@
 import org.jenkinsci.plugins.pipeline.modeldefinition.Utils
 
-def call() {
+def call(Map config) {
     node {
       println(env.RC)
       println(params.deployment_environment)
+      println(config)
       if (env.RC == "false"){
           Utils.markStageSkippedForConditional("Audit tools")
       }
