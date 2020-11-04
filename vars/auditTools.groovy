@@ -6,6 +6,7 @@ def call() {
         echo "Audit Tools groovy"
         #dotnet --list-sdks
         #dotnet --list-runtimes
+        echo "Running from shared library..."
       '''
     }
 }
