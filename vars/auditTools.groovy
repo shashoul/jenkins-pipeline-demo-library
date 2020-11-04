@@ -8,6 +8,10 @@ def call() {
         #dotnet --list-runtimes
         echo "Running from shared library..."
       '''
-      sh(libraryResource('test.sh'))
+      withCredentials(
+        [[$class: 'UsernamePasswordMultiBinding', credentialsId: 'b185f16c-556f-4434-9b1b-938574bc802b', usernameVariable: 'USERNAME', 
+            passwordVariable: 'NEXUS_PASSWORD']]) {
+                          sh(libraryResource('test.sh'))
+            }
     }
 }
